@@ -1,0 +1,54 @@
+<form
+  class="grid justify-items-center gap-6 my-10"
+  [formGroup]="loginForm"
+  (ngSubmit)="login()"
+>
+  <div class="mb-10">
+    <p class="font-bold text-mGreen text-4xl">{{ form_title }}</p>
+  </div>
+  <div class="login_input_container">
+    <input
+      type="email"
+      class="login_input"
+      id="email"
+      placeholder="ibuanuoluwa@gmail.com"
+      autofocus="false"
+      formControlName="email"
+    />
+  </div>
+  <div *ngIf="submitted && formControl.email.errors" class="error">
+    <p *ngIf="formControl.email.errors.email">Email must be valid.</p>
+    <p *ngIf="formControl.email.errors.required">Email is required.</p>
+  </div>
+  <div class="login_input_container">
+    <input
+      type="password"
+      class="login_input"
+      id="password"
+      placeholder="password"
+      formControlName="password"
+    />
+  </div>
+  <div *ngIf="submitted && formControl.password.errors" class="error">
+    <p *ngIf="formControl.password.errors.required">password is required.</p>
+  </div>
+  <div class="login_input_container">
+    <div class="form_text_container">
+      <label for="remember" class="relative main flex gap-4">
+        <input type="checkbox" id="remember" class="input_remember" />
+        <div class="geekmark"></div>
+        <p>Remember me</p>
+      </label>
+      <div>
+        <p>Forgot Password?</p>
+      </div>
+    </div>
+  </div>
+  <div class="login_input_container">
+    <button class="login_btn">Login to Your Account</button>
+  </div>
+  <div class="login_input_container gap-3 text-lg">
+    <p>Lost your password?</p>
+    <p><a class="text-sGreen cursor-pointer">Reset now</a></p>
+  </div>
+</form>

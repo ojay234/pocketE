@@ -1,0 +1,158 @@
+@tailwind components;
+
+table {
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+table tr {
+  background-color: white;
+  border-bottom: 0.5px solid #e5e7eb;
+  padding: 0.35em;
+  cursor: pointer;
+}
+table thead tr th:nth-child(5) span img {
+  display: none;
+}
+table thead tr th:nth-child(7) span img {
+  display: none;
+}
+table thead tr th:nth-child(9) span img {
+  display: none;
+}
+table tbody tr td:nth-child(9) {
+  color: #008080;
+}
+table tbody tr:hover {
+  background-color: #e5e7eb;
+}
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+table td {
+  font-size: 14px;
+  font-weight: 400;
+  color: #222222;
+}
+
+table th {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #888888;
+  font-weight: 500;
+  text-transform: capitalize;
+  border-bottom: 0.5px solid #e5e7eb;
+}
+table tr td p:last-child {
+  color: #888888;
+}
+table tr:last-child {
+  border-bottom: 0 solid;
+}
+
+@media screen and (max-width: 780px) {
+  table thead {
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    display: block;
+    font-size: 14px;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.number_select {
+  width: 43px;
+  max-width: 43px;
+  border: 1px solid #888888;
+  padding: 8px 5px;
+  line-height: 1.1;
+  background-color: white;
+  font-size: 14px;
+  color: #222222;
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+  font-weight: 700;
+}
+
+.number_select::after {
+  content: "";
+  width: 0.7em;
+  height: 0.5em;
+  background-color: #008080;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+select,
+.number_select:after {
+  grid-area: select;
+  justify-self: end;
+}
+
+option {
+  background-color: #f5f8fa;
+}
+
+@layer components {
+  table {
+    @apply p-0 m-0 w-full;
+  }
+  .l_btn {
+    @apply border-[1px] cursor-pointer text-mGreen border-pGrey w-[38px] h-[38px] bg-white flex justify-center items-center p-2 rounded-tr-md rounded-br-md border-l-0;
+  }
+  .f_btn {
+    @apply border-[1px] cursor-pointer text-mGreen border-r-0 border-pGrey w-[38px] h-[38px] bg-white flex justify-center items-center p-2 rounded-tl-md rounded-bl-md;
+  }
+  .m_btn {
+    @apply border-[1px] cursor-pointer text-mGreen border-pGrey w-[38px] h-[38px] bg-white flex justify-center items-center p-2;
+  }
+  .assessed {
+    @apply bg-caGreen  rounded-[10px]  flex justify-center items-center w-[67px] mx-auto;
+  }
+  .assessed span {
+    @apply text-taGreen text-[12px]  font-semibold;
+  }
+  .pending {
+    @apply bg-cpYellow  rounded-[10px] flex justify-center items-center w-[67px] mx-auto;
+  }
+  .pending span {
+    @apply text-tpYellow text-[12px]  font-semibold;
+  }
+}

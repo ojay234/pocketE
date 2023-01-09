@@ -1,0 +1,62 @@
+@tailwind components;
+
+/* check_box style */
+.input_remember {
+  visibility: hidden;
+}
+
+.geekmark {
+  position: absolute;
+  margin-top: 1.5px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 1px;
+  background-color: #eeeef0;
+  cursor: pointer;
+}
+
+.main .input_remember:checked ~ .geekmark {
+  background-color: #eeeef0;
+}
+
+.geekmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.main .input_remember:checked ~ .geekmark:after {
+  display: block;
+}
+
+.main .geekmark:after {
+  left: 7px;
+  bottom: 4px;
+  width: 6px;
+  height: 13px;
+  border: solid #187c7c;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* end of checkbox style */
+
+@layer components {
+  .login_input_container {
+    @apply flex justify-center w-full;
+  }
+  .login_input {
+    @apply bg-fGrey py-4 text-lg px-6 w-[75%] max-w-[440px] outline-none rounded-[8px];
+  }
+  .form_text_container {
+    @apply flex justify-between w-[75%] max-w-[440px];
+  }
+  .login_btn {
+    @apply max-w-[440px] w-[75%] text-center bg-mGreen rounded-[8px] px-2 py-4 text-white text-xl hover:shadow-lg;
+  }
+  .error {
+    @apply text-[14px] -mt-5 text-red-600;
+  }
+}

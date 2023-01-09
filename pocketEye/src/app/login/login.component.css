@@ -1,0 +1,13 @@
+@tailwind components;
+
+@layer components {
+  .login_container {
+    @apply flex flex-col justify-between h-[100vh] max-h-[982px];
+  }
+  .row {
+    @apply grid gap-4 max-w-[1512px] w-[95%] mx-auto;
+  }
+  .menu_container {
+    @apply mx-auto max-w-[1660px] w-[100%] bg-white;
+  }
+}

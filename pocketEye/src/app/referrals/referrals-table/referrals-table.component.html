@@ -1,0 +1,67 @@
+<div class="max-w-[1512px] w-[90%] mx-auto mt-[130px]">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let heading of headings" scope="col">
+          <p class="flex justify-center items-center gap-4">
+            <span>{{ heading.headingName }}</span>
+            <span><img src="assets/svg/edit.svg" alt="" /></span>
+          </p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; index as i">
+        <td data-label="date">{{ item.date }}</td>
+        <td data-label="NHS NUMBER">{{ item.nhs_number }}</td>
+        <td data-label="FIRST name">{{ item.first_name }}</td>
+        <td data-label="Last name">{{ item.last_name }}</td>
+        <td data-label="DOB">{{ item.dob }}</td>
+        <td data-label="Suspected diagnosis">{{ item.suspected_diagnosis }}</td>
+        <td data-label="Referred by" class="grid gap-1">
+          <p>{{ item.referred_by.name }}</p>
+          <p>{{ item.referred_by.location }}</p>
+        </td>
+        <td data-label="STATUS">
+          <p class="assessed" *ngIf="item.status.assessed === true">
+            <span>Assessed</span>
+          </p>
+          <p class="pending" *ngIf="item.status.assessed === false">
+            <span> pending </span>
+          </p>
+        </td>
+        <td data-label="ACTION">{{ item.actions }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="flex gap-10 my-10 items-center">
+    <div class="flex items-center gap-3">
+      <p>
+        showing of to
+        <span class="font-semibold">{{ pageData.start + 1 }}</span>
+      </p>
+      <div class="number_select">
+        <select>
+          <option class="selected">{{ pageData.end }}</option>
+        </select>
+      </div>
+      <p>of {{ size }} results</p>
+    </div>
+    <div class="flex items-center gap-0">
+      <div class="f_btn" (click)="firstPage()">
+        <img src="assets/svg/first.svg" alt="" />
+      </div>
+      <div class="m_btn" (click)="prev()">
+        <img src="assets/svg/prev.svg" alt="" />
+      </div>
+      <div class="m_btn">{{ page + 1 }}</div>
+      <div class="m_btn" (click)="next()">
+        <img src="assets/svg/next.svg" alt="" />
+      </div>
+      <div class="l_btn" (click)="lastPage()">
+        <img src="assets/svg/last.svg" alt="" />
+      </div>
+    </div>
+  </div>
+</div>

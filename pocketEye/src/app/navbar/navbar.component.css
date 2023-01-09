@@ -1,0 +1,73 @@
+@tailwind components;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.navbar_select {
+  width: 165px;
+  max-width: 165px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 6px;
+  line-height: 1.1;
+  background-color: transparent;
+  font-size: 14px;
+  color: #888888;
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+}
+
+.navbar_select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: #888888;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+select,
+.navbar_select:after {
+  grid-area: select;
+  justify-self: end;
+}
+
+option {
+  background-color: #f5f8fa;
+}
+
+@layer components {
+  .navbar_right {
+    @apply flex gap-6;
+  }
+  .navbar_right ul {
+    @apply flex items-center gap-10;
+  }
+  .navbar_right ul li {
+    @apply relative;
+  }
+  .navbar_right ul li a {
+    @apply cursor-pointer hover:text-mGreen;
+  }
+  .notification {
+    @apply absolute font-semibold right-[-23px] mb-3 -mt-5 text-[12px] bg-nRed w-[22px] h-[22px] rounded-full flex justify-center items-center text-white;
+  }
+}
