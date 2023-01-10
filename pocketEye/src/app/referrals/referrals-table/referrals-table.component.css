@@ -135,7 +135,7 @@ option {
 
 @layer components {
   table {
-    @apply p-0 m-0 w-full;
+    @apply p-0 m-0 w-full shadow-md;
   }
   .l_btn {
     @apply border-[1px] cursor-pointer text-mGreen border-pGrey w-[38px] h-[38px] bg-white flex justify-center items-center p-2 rounded-tr-md rounded-br-md border-l-0;
