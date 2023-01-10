@@ -1,0 +1,10 @@
+@tailwind components;
+
+@layer components {
+  .menu {
+    @apply flex w-full justify-between items-center py-5 px-[15%] text-black;
+  }
+  .menu li a {
+    @apply cursor-pointer hover:text-mGreen;
+  }
+}
