@@ -3,9 +3,14 @@
     <thead>
       <tr>
         <th *ngFor="let heading of headings" scope="col">
-          <p class="flex justify-center items-center gap-4">
+          <p class="flex justify-center items-center gap-2">
             <span>{{ heading.headingName }}</span>
-            <span><img src="assets/svg/edit.svg" alt="" /></span>
+            <span class="flex flex-col justify-center"
+              ><mat-icon class="mat mt-2">keyboard_arrow_up</mat-icon
+              ><mat-icon class="mat -mt-[14px]"
+                >keyboard_arrow_down</mat-icon
+              ></span
+            >
           </p>
         </th>
       </tr>

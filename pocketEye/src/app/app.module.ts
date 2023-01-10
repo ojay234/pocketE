@@ -38,7 +38,17 @@ import { ReferralsTableComponent } from './referrals/referrals-table/referrals-t
       {
         path: 'optom',
         component: OptomComponent,
-        children: [{ path: '', component: ReferralsComponent }],
+        children: [
+          {
+            path: '',
+            redirectTo: 'referrals',
+            pathMatch: 'full',
+          },
+          {
+            path: 'referrals',
+            component: ReferralsComponent,
+          },
+        ],
       },
     ]),
   ],

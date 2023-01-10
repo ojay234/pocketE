@@ -11,13 +11,16 @@ table tr {
   padding: 0.35em;
   cursor: pointer;
 }
-table thead tr th:nth-child(5) span img {
+table thead tr th .mat {
+  font-size: 18px;
+}
+table thead tr th:nth-child(5) .mat {
   display: none;
 }
-table thead tr th:nth-child(7) span img {
+table thead tr th:nth-child(7) .mat {
   display: none;
 }
-table thead tr th:nth-child(9) span img {
+table thead tr th:nth-child(9) .mat {
   display: none;
 }
 table tbody tr td:nth-child(9) {

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { data, headings } from '../data';
+import { headings } from './referrals-table/tableHeadings';
+import { referral } from '../models/referral';
+import { ReferralService } from '../services/referral/referral.service';
 
 @Component({
   selector: 'app-referrals',
@@ -7,6 +9,10 @@ import { data, headings } from '../data';
   styleUrls: ['./referrals.component.css'],
 })
 export class ReferralsComponent {
-  data = data;
+  data: referral[] = [];
+  constructor(referralsService: ReferralService) {
+    this.data = referralsService.getAll();
+  }
+
   headings = headings;
 }

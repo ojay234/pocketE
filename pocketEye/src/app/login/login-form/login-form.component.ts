@@ -28,7 +28,7 @@ export class LoginFormComponent {
   login(): void {
     this.submitted = true;
     if (this.loginForm.valid) {
-      this.router.navigate(['/optom']);
+      this.router.navigate(['optom']);
     }
   }
 }

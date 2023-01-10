@@ -56,18 +56,30 @@ option {
 
 @layer components {
   .navbar_right {
-    @apply flex gap-6;
+    @apply flex gap-7;
   }
   .navbar_right ul {
-    @apply flex items-center gap-10;
+    @apply flex items-center gap-12;
   }
   .navbar_right ul li {
-    @apply relative;
+    @apply relative cursor-pointer;
   }
   .navbar_right ul li a {
-    @apply cursor-pointer hover:text-mGreen;
+    @apply hover:text-mGreen;
   }
   .notification {
     @apply absolute font-semibold right-[-23px] mb-3 -mt-5 text-[12px] bg-nRed w-[22px] h-[22px] rounded-full flex justify-center items-center text-white;
+  }
+  .navbar_container {
+    @apply fixed bg-white top-0 w-full flex justify-center;
+  }
+  .navbar {
+    @apply relative max-w-[1512px] w-full;
+  }
+  .navbar_content {
+    @apply flex justify-between items-center py-5 w-[95%] mx-auto;
+  }
+  .navbar_search {
+    @apply bg-fGrey py-[10px] pl-12 pr-4 rounded-2xl w-[345px] outline-none;
   }
 }
