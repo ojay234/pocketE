@@ -8,7 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login-form.component.css'],
 })
 export class LoginFormComponent {
+  //form title
   form_title = 'Login to your Account';
+
   public loginForm: FormGroup | any;
   public submitted = false;
 
