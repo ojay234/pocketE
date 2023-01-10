@@ -25,7 +25,7 @@
         <td data-label="Suspected diagnosis">{{ item.suspected_diagnosis }}</td>
         <td data-label="Referred by" class="grid gap-1">
           <p>{{ item.referred_by.name }}</p>
-          <p>{{ item.referred_by.location }}</p>
+          <p>{{ item.referred_by.unit }}</p>
         </td>
         <td data-label="STATUS">
           <p class="assessed" *ngIf="item.status.assessed === true">
