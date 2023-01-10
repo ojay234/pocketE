@@ -11,7 +11,7 @@ table tr {
   padding: 0.35em;
   cursor: pointer;
 }
-table thead tr th .mat {
+table thead tr .mat {
   font-size: 18px;
 }
 table thead tr th:nth-child(5) .mat {

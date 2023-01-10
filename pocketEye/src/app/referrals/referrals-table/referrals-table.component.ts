@@ -1,20 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-const pageValues = {
-  page_size: 10,
-};
-
 @Component({
   selector: 'app-referrals-table',
   templateUrl: './referrals-table.component.html',
   styleUrls: ['./referrals-table.component.css'],
 })
 export class ReferralsTableComponent implements OnInit {
+  //initialize inputs and variables
   @Input() headings: any[] = [];
   @Input() data: any[] = [];
-  @Input() pageSize = pageValues.page_size;
-
-  page = 0;
+  @Input() pageSize: number = 10;
+  page: number = 0;
   items: any[] = [];
   pageData = {} as {
     start: number;
@@ -44,7 +40,6 @@ export class ReferralsTableComponent implements OnInit {
     let endPortion = startPortion + pageSize;
 
     if (endPortion > this.size) {
-      //if calculated end portion is greater than the actual item size, deduct (endPortion - size ) from endPortion
       endPortion -= endPortion - this.size;
     }
     this.saveCalculatedPortion(startPortion, endPortion);
